@@ -20,7 +20,8 @@ public class Rectangle extends AbstractGeomObject {
     }
 
     public boolean contains(int x, int y) {
-        return x >= this.position.x && x <= this.position.x + this.a && y >= this.position.y && y <= this.position.y + this.a;
+        return x >= this.position.x - this.a / 2 && x <= this.position.x - this.a / 2 + this.a &&
+                y >= this.position.y - this.b / 2 && y <= this.position.y - this.b / 2 + this.b;
     }
 
     public void draw(Graphics2D g) {

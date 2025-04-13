@@ -17,8 +17,8 @@ public class Circle extends AbstractGeomObject {
     }
 
     public boolean contains(int x, int y) {
-        int m = this.position.x + this.radius;
-        int n = this.position.y + this.radius;
+        int m = this.position.x;
+        int n = this.position.y;
         int l = (x - m) * (x - m) + (y - n) * (y - n);
         int r = this.radius * this.radius;
         return l <= r;

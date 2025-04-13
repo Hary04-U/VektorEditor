@@ -17,7 +17,8 @@ public class Square extends AbstractGeomObject {
     }
 
     public boolean contains(int x, int y) {
-        return x >= this.position.x && x <= this.position.x + this.a && y >= this.position.y && y <= this.position.y + this.a;
+        return x >= this.position.x - this.a / 2 && x <= this.position.x - this.a / 2 + this.a &&
+                y >= this.position.y - this.a / 2 && y <= this.position.y - this.a / 2 + this.a;
     }
 
     public void draw(Graphics2D g) {

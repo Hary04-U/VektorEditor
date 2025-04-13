@@ -17,11 +17,12 @@ public class MainWindow extends JFrame {
     private JToggleButton btSquare;
     private JToggleButton btRectangle;
     private JToggleButton btTriangle;
+    private JToggleButton btSelect;
 
     public MainWindow() {
         super("Vektorový editor");
         this.setDefaultCloseOperation(3);
-        panel = new GraphPanel(objekty);
+        panel = new GraphPanel(objekty, this);
         add(panel, BorderLayout.CENTER);
         createToolBar();
         this.initTestData();
@@ -68,6 +69,10 @@ public class MainWindow extends JFrame {
         btTriangle = new JToggleButton("Trojúhelník");
         buttonGroup.add(btTriangle);
         toolBar.add(btTriangle);
+
+        btSelect = new JToggleButton("->");
+        buttonGroup.add(btSelect);
+        toolBar.add(btSelect);
     }
 
     private void initTestData() {
@@ -83,5 +88,9 @@ public class MainWindow extends JFrame {
         this.objekty.add(new Triangle(new Point(100, 250), 10, Color.DARK_GRAY));
         this.objekty.add(new Triangle(new Point(300, 160), 20, Color.PINK));
         this.objekty.add(new Triangle(new Point(260, 500), 30, Color.GRAY));
+    }
+
+    public boolean isSelectMode() {
+        return btSelect.isSelected();
     }
 }
